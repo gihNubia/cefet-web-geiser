@@ -1,0 +1,28 @@
+{
+  "name": "cefet-web-geiser",
+  "version": "1.0.0",
+  "description": "Um mostruário de algumas pessoas que ficam fritando seus PCs. Há uma página que mostra essas pessoas e outra com detalhes sobre o que elas andam fazendo com seus computadores.",
+  "homepage": "https://github.com/gihNubia/cefet-web-geiser#readme",
+  "bugs": {
+    "url": "https://github.com/gihNubia/cefet-web-geiser/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gihNubia/cefet-web-geiser.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "handlebars": "^4.7.9",
+    "hbs": "^4.2.1"
+  }
+}

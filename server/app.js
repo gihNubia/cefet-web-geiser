@@ -1,4 +1,7 @@
 // importação de dependência(s)
+const express = require('express')
+const path = require('path')
+const app = express()
 
 
 // variáveis globais deste módulo
@@ -17,14 +20,17 @@ const db = {}
 //app.set('view engine', '???qual-templating-engine???');
 //app.set('views', '???caminho-ate-pasta???');
 // dica: 2 linhas
-
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
 
 // EXERCÍCIO 2
 // definir rota para página inicial --> renderizar a view index, usando os
 // dados do banco de dados "data/jogadores.json" com a lista de jogadores
 // dica: o handler desta função é bem simples - basta passar para o template
 //       os dados do arquivo data/jogadores.json (~3 linhas)
-
+app.get('/', (req, res) => {
+  res.render('index');
+});
 
 
 // EXERCÍCIO 3
@@ -37,7 +43,11 @@ const db = {}
 // EXERCÍCIO 1
 // configurar para servir os arquivos estáticos da pasta "client"
 // dica: 1 linha de código
+app.use(express.static(path.join(__dirname, '..', 'client')))
 
 
 // abrir servidor na porta 3000 (constante PORT)
 // dica: 1-3 linhas de código
+app.listen(PORT, () => {
+  console.log('Escutando em: http://localhost:3000')
+})
